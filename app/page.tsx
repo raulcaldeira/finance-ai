@@ -1,14 +1,19 @@
+import { UserButton } from "@clerk/nextjs";
 import { Button } from "./_components/ui/button";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import { dark } from "@clerk/themes";
 
-const Home = () => {
+const Home = async () => {
+  const { userId } = await auth();
+
+  if (!userId) {
+    redirect("/login");
+  }
   return (
-    <>
-      <div className="flex w-screen items-center justify-center">
-        <h1 className="text-red-500"> HELLO WORLD</h1>
-      </div>
-
-      <Button>Enviar</Button>
-    </>
+    <div className="flex h-full items-center justify-center">
+      <UserButton showName />
+    </div>
   );
 };
 
