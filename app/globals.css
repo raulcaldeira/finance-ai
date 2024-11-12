@@ -79,3 +79,29 @@ body {
     @apply h-full bg-background text-foreground;
   }
 }
+
+@layer components {
+  /* Personalizando a barra de rolagem do elemento */
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: #55b02e; /* Cor da barra de rolagem (substitua pela sua cor 'primary') */
+    border-radius: 4px; /* Deixa o "thumb" arredondado */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background-color: rgba(
+      122,
+      119,
+      119,
+      0.3
+    ); /* Cor de fundo do "track" da barra de rolagem */
+    border-radius: 4px; /* Deixa o "track" arredondado */
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background-color: #55b02e; /* Cor ao passar o mouse (opcional, mais escura) */
+  }
+}
