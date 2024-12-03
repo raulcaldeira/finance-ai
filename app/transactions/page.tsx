@@ -6,7 +6,6 @@ import Navbar from "../_components/navbar";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { ScrollArea } from "../_components/ui/scroll-area";
-import { getCurrentMonthTransactions } from "../_data/get-current-month-transactions";
 import { canUserAddTransaction } from "../_data/can-user-add-transaction";
 
 const TransactionsPage = async () => {

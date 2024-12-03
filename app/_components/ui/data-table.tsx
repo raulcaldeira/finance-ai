@@ -15,7 +15,6 @@ import {
   TableHeader,
   TableRow,
 } from "./table";
-import { ScrollArea } from "./scroll-area";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];

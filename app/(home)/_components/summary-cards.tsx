@@ -7,7 +7,6 @@ import {
 import SummaryCard from "./summary-card";
 
 interface SummaryCards {
-  month: string;
   balance: number;
   depositsTotal: number;
   investmentsTotal: number;
@@ -16,20 +15,12 @@ interface SummaryCards {
 }
 
 const SummaryCards = async ({
-  month,
   balance,
   depositsTotal,
   expensesTotal,
   investmentsTotal,
   userCanAddTransaction,
 }: SummaryCards) => {
-  const where = {
-    date: {
-      gte: new Date(`2024-${month}-01`),
-      lte: new Date(`2024-${month}-31`),
-    },
-  };
-
   return (
     <div className="space-y-6">
       <SummaryCard
